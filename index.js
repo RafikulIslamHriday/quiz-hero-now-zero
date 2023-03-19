@@ -111,7 +111,8 @@ document.querySelector("#submit").addEventListener("click", () => {
   }
 
   // data setting on local storage and getting data from local storage
-  let storage = JSON.parse(localStorage.getItem("result"));
+  let storage = JSON.parse(localStorage.getItem("results"));
+  console.log(storage);
   if (storage) {
     localStorage.setItem(
       "results",
@@ -136,10 +137,12 @@ document.querySelector("#submit").addEventListener("click", () => {
       ])
     );
   }
+  
 
   // Right side bar/ answer section
   let x = setTimeout(() => {
     showAnswers(answers);
+    console.log(grade);
     displayResult.innerHTML = `<div
     class="h-[220px] w-[220px] mx-auto mt-8 flex flex-col justify-center border-2 rounded-tr-[50%] rounded-bl-[50%]"
   >
